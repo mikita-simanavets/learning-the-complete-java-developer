@@ -46,6 +46,18 @@ public class MethodsChallenge {
         displayHighScorePosition("Bound-4", calculateHighScorePosition(99));
     }
 
+    private static int calculateHighScorePosition(int score) {
+        if (score >= 1000) {
+            return 1;
+        } else if (score >= 500) {
+            return 2;
+        } else if (score >= 100) {
+            return 3;
+        } else {
+            return 4;
+        }
+    }
+
     private static int calculateScore(boolean gameOver, int score, int levelCompleted, int bonus) {
         if (gameOver) {
             int finalScore = score + (levelCompleted * bonus);
@@ -58,17 +70,5 @@ public class MethodsChallenge {
     private static void displayHighScorePosition(String name, int position) {
         String message = String.format("%s managed to get into position %s on the high score table", name, position);
         System.out.println(message);
-    }
-
-    private static int calculateHighScorePosition(int score) {
-        if (score >= 1000) {
-            return 1;
-        } else if (score >= 500) {
-            return 2;
-        } else if (score >= 100) {
-            return 3;
-        } else {
-            return 4;
-        }
     }
 }
